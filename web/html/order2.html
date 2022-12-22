@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/web/style/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/validation_order.js"></script>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body>
+<div style=".flex-container">
+    <div class="header">
+        <a href="first.html"><img class="logo" src="../pictures/logo.png" alt="Logotype!!!"></a>
+        <h1 class="logoName"><a href="#">Магазин побутової техніки</a></h1>
+        <ul class="main-nav">
+            <li><a id="index" href="first.html">Головна</a></li>
+            <li><a href="../index.html">Каталог</a></li>
+            <li>
+                <div class="dropdown">
+                    <a class="dropbtn" style="
+            background-color: #34495e; color: #ccccff;"> Кошик
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="basket.html">Переглянути кошик</a>
+                        <a href="order2.html" style="
+            background-color: #34495e; color: #ccccff;">Оформити замовлення</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="contactUs.html">Зв'язатися з нами</a></li>
+        </ul>
+    </div>
+</div>
+<br><br><br><br>
+<div>
+
+
+</div>
+<body>
+<div class="message" id="message">
+    <div class="message_container">
+        <div class="message_body">
+            <p>Замовлення прийнято</p>
+            <form action="../index.html" method="get">
+                <input type="submit" class="close_wind" style="padding: 2.5px 7.5px" value="&#10006">
+            </form>
+        </div>
+    </div>
+</div>
+<form action="first.html" id="doOrder" method="post">
+    <div class="text2cols" style="text-align: center;">
+        <div class="frame">
+            <h1>Оформлення замовлення</h1>
+        </div>
+        <!--  Ваші контактні дані<br>-->
+        <label for="last_name2">Прізвище</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="first_name2">Ім'я</label><br>
+        <input id="last_name2" type="text" onkeyup="checkParams()" oninput="checkLastName()" placeholder="Прізвище"
+               required>
+        <input id="first_name2" type="text" onkeyup="checkParams()" oninput="checkFirstName()" placeholder="Ім'я"
+               required><br>
+        <label for="phone_number">Номер телефону</label><br>
+        <input id="phone_number" onkeyup="checkParams()" oninput="checkPhoneNumber()" type="text"
+               placeholder="Номер телефону" required><br>
+        Тип доставки<br>
+        <select id="mySelect" onkeyup="checkParams()" oninput="checkDelivery()" required>
+            <option id="del0"></option>
+            <option id="del1" value="courier">кур'єр</option>
+            <option id="del2" value="mail">пошта</option>
+        </select><br>
+        <div id="myDiv1" style="display: none; width: auto">
+            <label for="city1">Місто</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="address">Адреса</label><br>
+            <input id="city1" type="text" placeholder="Ваше місто" onkeyup="checkParams()" oninput="checkCity1()">
+            <input id="address" type="text" placeholder="Адреса" onkeyup="checkParams()" oninput="checkAddress()"><br>
+        </div>
+        <div id="myDiv2" style="display: none; width: auto">
+            <label for="city2">Місто</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="mail_index">Поштовий індекс</label><br>
+            <input id="city2" type="text" placeholder="Ваше місто" onkeyup="checkParams()" oninput="checkCity2()">
+            <input id="mail_index" type="text" placeholder="індекс" onkeyup="checkParams()" oninput="checkMail()"><br>
+        </div>
+        Тип оплати<br>
+        <select id="pay_type" onkeyup="checkParams()" oninput="checkPayType()" required>
+            <option id="another" value=""></option>
+            <option id="card" value="card">карткою</option>
+            <option id="cash" value="cash upon receipt">готівкою при отриманні</option>
+        </select><br>
+        <div id="myDiv3" style="display: none; width: auto">
+            <input style="background-color: #BC54FF" type="submit" value="Сплатити">
+        </div>
+        <br>
+        <input type="button" id="paybtn2" onclick="openWindowMessage()" value="Замовити"><br><br>
+        <input type="reset" id="reset1" style="background-color: #C5C5C5; color: black" onclick="addWhiteColor()"
+               value="Очистити">
+        <br>
+    </div>
+</form>
+</body>
+</body>
+<script>
+    var myDiv1 = document.getElementById("myDiv1");
+    var myDiv2 = document.getElementById("myDiv2");
+    document.getElementById("mySelect").onchange = function () {
+        if (this.selectedIndex === 1) {
+            myDiv1.style.display = "block";
+            myDiv2.style.display = "none";
+        } else if (this.selectedIndex === 2) {
+            myDiv2.style.display = "block";
+
+            myDiv1.style.display = "none";
+        } else {
+            myDiv1.style.display = "none";
+            myDiv2.style.display = "none";
+        }
+    }
+
+    var myDiv3 = document.getElementById("myDiv3");
+    document.getElementById("pay_type").onchange = function () {
+        myDiv3.style.display = (this.selectedIndex === 1) ? "block" : "none";
+    }
+</script>
+</html>

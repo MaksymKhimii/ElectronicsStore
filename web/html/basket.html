@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/web/style/style.css">
+    <link rel="stylesheet" href="/web/style/basket_style.css">
+    <script type="text/javascript" src="../js/validation_order.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <title>Basket</title>
+</head>
+<body>
+<div style=".flex-container">
+    <div class="header">
+        <a href="first.html"><img class="logo" src="../pictures/logo.png" alt="Logotype!!!"></a>
+        <h1 class="logoName"><a href="#">Магазин побутової техніки</a></h1>
+        <ul class="main-nav">
+            <li><a id="index" href="first.html">Головна</a></li>
+            <li><a href="../index.html">Каталог</a></li>
+            <li>
+                <div class="dropdown">
+                    <a class="dropbtn" style="
+            background-color: #34495e; color: #ccccff;"> Кошик
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="basket.html" style="
+            background-color: #34495e; color: #ccccff;">Переглянути кошик</a>
+                        <a href="order2.html">Оформити замовлення</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="contactUs.html">Зв'язатися з нами</a></li>
+        </ul>
+    </div>
+    <br><br><br>
+</div>
+<div class="shopping-cart" style="text-align: center">
+    <div id="shopping-cart1" class="shopping-cart1"></div>
+    <br>
+    <form>
+        <a class="continue" href="../index.html">Продовжити</a>
+        <a class="continue" style="background-color: #03A9F4" href="order2.html">Оформити замовлення</a>
+        <a class="continue" style="background-color: #fc5a5a" href="#" id="clear_cart">Очистити корзину</a>
+    </form>
+</div>
+<script type="text/javascript" src="../js/basket1.js"></script>
+</body>
+</html>
